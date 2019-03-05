@@ -182,9 +182,8 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 - Dependencies on deployment
 - Maven transitive clashing dependencies
 - Losing overview of services and their version
-- Complex management of requirements which apply for multi microservices
-- Manually connection services via config
-- frequent release cycles -> fix bugs for external interfaces
+- Complex management of requirements for multiple microservices
+- Frequent release cycles -> fix bugs for external interfaces
 - Handling of multi tenancy was introduced after first releases
 
 ---
@@ -192,7 +191,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 ## Wrap Up
 
 - Use:
-  - managed Kubernetes
+  - Managed Kubernetes
   - API-Gateways
   - Service-Discovery
 - Think about multi tenancy
