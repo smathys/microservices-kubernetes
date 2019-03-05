@@ -1,0 +1,15 @@
+#
+# GitPitch Slideshow Custom Settings
+#
+# For details, visit Wiki:
+# https://github.com/gitpitch/gitpitch/wiki/Slideshow-Settings
+#
+theme : black
+theme-override : assets/css/PITCHME.css
+highlight : github-gist
+# logo : assets/image/logo-1.jpg
+background : assets/image/binary.jpg
+background-opacity : 10
+transition : fade
+published : true
+footnote : "Susanne Mathys - <a href='https://gitpitch.com/smathys/microservices-kubernetes/master#/'>Microservices and Kubernetes</a>"
