@@ -1,9 +1,8 @@
 # Microservices and Kubernetes
 
 ![title](assets/image/container.png)
-
 +++
-> My 50 Cents about microservices running in the cloud
+
 
 Experiences made, working with Microservices and Kubernetes on AWS during one year
 
@@ -61,7 +60,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
   - Cassandra Cluster on AWS Cloud
   - Postgres on AWS Cloud
 - Message Queue: Kafka Cluster on AWS Cloud
-- App: Xamarin Mobile Apps mit gemeinsamen Mobile-SDK
+- App: Xamarin Mobile Apps and common Mobile-SDK
 
 +++
 
@@ -90,8 +89,8 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
   - 3 Mobile developers Noser Engineering
   - 2 Hardware developers Siemens
   - 1 PO Siemens
-  - 1 Project/Team Manager / Tech Lead Noser Engineering
-  - 1 mathematician Siemens Munich
+  - 1 Team Leader / Tech Lead Noser Engineering
+  - 1 Mathematician Siemens Munich
 
 ---
 
@@ -109,9 +108,9 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 - Multi tenancy with namespaces in clusters
 - Access via identity file and ssh
 - Tools
+  - ELK
   - Grafana
-  - Kibana
-  - Cockpit
+  - Cockpit-App
 
 +++
 
@@ -140,7 +139,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 ### Development on Microservices
 
-- Java & kotlin mixed
+- Java & Kotlin mixed
 - Spring Boot Jars
 - 1 Parent Pom for managing Spring Boot Version
 - Support Libs as abstraction for Cassandra, Kafka, Http
@@ -185,14 +184,17 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 - Losing overview of services and their version
 - Complex management of requirements which apply for multi microservices
 - Manually connection services via config
-- Backend had to fix app-bugs because of more frequent release cycles
+- frequent release cycles -> fix bugs for external interfaces
 - Handling of multi tenancy was introduced after first releases
 
 ---
 
 ## Wrap Up
 
-- Use managed Kubernetes
+- Use:
+  - managed Kubernetes
+  - API-Gateways
+  - Service-Discovery
 - Think about multi tenancy
 - Bleeding edge is not always fun (spring-data cassandra release was to late)
 - Think about when / how remove old microservices
