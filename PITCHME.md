@@ -176,7 +176,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 ---
 
-## The Cons's
+## The Con's
 
 - Config files hell
 - Dependencies on deployment
