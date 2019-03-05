@@ -1,10 +1,11 @@
 # Microservices and Kubernetes
 
+![title](assets/image/container.png)
+
++++
 > My 50 Cents about microservices running in the cloud
 
 Experiences made, working with Microservices and Kubernetes on AWS during one year
-
-![title](assets/image/container.png)
 
 ---
 
@@ -12,25 +13,29 @@ Experiences made, working with Microservices and Kubernetes on AWS during one ye
 
 <table>
 <tr>
-  <td><img src="assets/image/docker.png" width="150px"></td>
+  <td><img src="assets/image/docker.png" width="100px"></td>
     <td>Docker</td>
 </tr>
 
 <tr>
-  <td><img src="assets/image/compose.jpg" width="150px"></td>
+  <td><img src="assets/image/compose.jpg" width="100px"></td>
     <td>Docker Compose</td>
 </tr>
+</table>
 
++++
+
+<table>
 <tr>
-  <td><img src="assets/image/swarm.png" width="150px"></td>
+  <td><img src="assets/image/swarm.png" width="100px"></td>
     <td>Docker Swarm</td>
 </tr>
 <tr>
-  <td><img src="assets/image/kubernetes.png" width="150px"></td>
+  <td><img src="assets/image/kubernetes.png" width="100px"></td>
     <td>Kubernetes</td>
 </tr>
 <tr>
-  <td><img src="assets/image/openshift.png" width="150px"> </td>
+  <td><img src="assets/image/openshift.png" width="100px"> </td>
     <td>Openshift</td>
 </tr>
 </table>
@@ -46,26 +51,35 @@ Experiences made, working with Microservices and Kubernetes on AWS during one ye
 Note:
 Siemens biete die Platform an um die Abilio App zu betreiben.
 Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günstigte Ticket ausgewählt und gekauft
+
 +++
 
 ### Tech Stack
 
 - Container Platform: Kubernetes Cluster on AWS Cloud
-- Database: Cassandra Cluster on AWS Cloud
-  Postgres on AWS Cloud
+- Database:
+  - Cassandra Cluster on AWS Cloud
+  - Postgres on AWS Cloud
 - Message Queue: Kafka Cluster on AWS Cloud
 - App: Xamarin Mobile Apps mit gemeinsamen Mobile-SDK
-- Microservices:
+
++++
+
+- Microservices Languages:
 
   - Java Spring Microservices
   - React Frontend "Cockpit"
+  - Python PDF processing
+
++++
 
 - Tools Microservices:
   - Grafana
   - Kibana
   - Nginx as Gateway
   - Gitlab Pipelines
-
+  
++++
 ### Team
 
 - Ops team in India
@@ -85,13 +99,15 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 ![Microservices](assets/image/microservices.jpg)
 
++++
+
 ### Cluster
 
 - 3 Environments: dev, staging, prod
-- dev & staging AWS Ireland
-- prod AWS Frankfurt, no access rights for developers
-- multi tenancy with namespaces in clusters
-- access via identity file and ssh
+- Dev & staging AWS Ireland
+- Prod AWS Frankfurt, no access rights for developers
+- Multi tenancy with namespaces in clusters
+- Access via identity file and ssh
 - Tools
   - Grafana
   - Kibana
@@ -99,24 +115,30 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 +++
 
-#### Setup/Organisation of Microservices
+### Setup/Organisation of Microservices
 
 - 1 git repo per service
-- corresponding config files in config-repo
-- cassandra keyspace per service per client
-- kafka topics per event-stream and client
+- Corresponding config files in config-repo
+- Cassandra keyspace per service per client
+- Kafka topics per event-stream and client
 
 +++
 
-#### Working on Microservices
+### Working on Microservices
 
-- small code repos
-- read kafka topic, process message, calculate, store in db, rest-controller
-- serialize / deserialze json
+- Small code repos
+- Tasks:
+  - Read kafka topic
+  - Process message
+  - Calculate
+  - Store in db
+  - Write to kafka topic
+  - Rest-controller
+- Serialize / Deserialze json
 
 +++
 
-#### Development on Microservices
+### Development on Microservices
 
 - Java & kotlin mixed
 - Spring Boot Jars
@@ -125,30 +147,31 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 +++
 
-#### Testing on a Microservices
+### Testing on a Microservices
 
 - Portforwarding for local development, Dev cluster used heavenly by developers
-- automated API Tests with Postman/
-- replay of old journeys from staging or prod
+- Automated API Tests for each Service with Postman
+- Replay of old journeys from staging or prod
+- Fake model train in office which drive one S-Bahn line all day long
 
 +++
 
-#### Tools used for Development
+### Tools used for Development
 
-- docker-compose
-- postman
-- ssh portforwarding
-- bash script/ tools provided by cassandra & kafka
+- Docker-compose
+- Postman
+- Ssh portforwarding
+- Bash script/ tools provided by cassandra & kafka
 
 ---
 
 ## The Pro's
 
-- focus on small functions
-- independent deployment of releases
-- docker-image run everywhere, deployment of release means config uses new version of docker-image
-- zero downtime deployment
-- usage of Kafka:
+- Focus on small functions
+- Independent deployment of releases
+- Docker-image run everywhere, deployment of release means config uses new version of docker-image
+- Zero downtime deployment
+- Usage of Kafka:
   - dead-letter-que
   - mesarue metrics on kafka-queues
 
@@ -156,21 +179,21 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 ## The Cons's
 
-- config files hell
-- dependencies on deployment
-- losing overview of services and their version
-- complex management of requirements which apply for multi microservices
-- manually connection services via config
-- backend had to fix app-bugs because of more frequent release cycles
-- handling of multi tenancy was introduced after first releases
+- Config files hell
+- Dependencies on deployment
+- Maven transitive clashing dependencies
+- Losing overview of services and their version
+- Complex management of requirements which apply for multi microservices
+- Manually connection services via config
+- Backend had to fix app-bugs because of more frequent release cycles
+- Handling of multi tenancy was introduced after first releases
 
 ---
 
 ## Wrap Up
 
-- use managed Kubernetes
-- think about multi tenancy
-- bleeding edge is not always fun (spring-data cassandra release was to late)
-- think about when / how remove old microservices
+- Use managed Kubernetes
+- Think about multi tenancy
+- Bleeding edge is not always fun (spring-data cassandra release was to late)
+- Think about when / how remove old microservices
 
-+++
