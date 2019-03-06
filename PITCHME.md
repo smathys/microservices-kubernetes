@@ -96,7 +96,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 ## Working with Kubernetes and Microservices
 
-<img src="assets/image/microservices.jpg" width="800px">  
+<img src="assets/image/microservices.jpg" width="600px">  
 
 
 +++
@@ -177,13 +177,12 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 - Focus on small functions
 - Independent deployment of releases
-- Docker-image: deployment of release means config uses new version of Docker-Image
+- Deployment of release means pod starting with new Docker-Image version
 - Zero downtime deployment
 - Usage of Kafka:
-  - dead-letter-que
+  - dead-letter-queue
   - measure metrics on Kafka queues
   - replay journeys in different environments
-  - retention time 30 days
 - Build own pragmatic Liquibase approach for Cassandra
 
 ---
@@ -196,18 +195,18 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 - Losing overview of services and their version
 - Complex management of requirements for multiple microservices
 - Frequent release cycles -> fix bugs for external interfaces
-- Handling of multi t enancy was introduced after first releases
+- Handling of multi tenancy was introduced after first releases
 
 ---
 
 ## Wrap Up
 
 - Use:
-  - Managed Kubernetes, upgrade kubernetes cluster was time-consuming
+  - Managed Kubernetes (upgrade kubernetes cluster was hard)
   - API-Gateways
   - Service-Discovery
   - Cloud Config Service/Framework
 - Think about applying multi tenancy first
 - Bleeding edge is not always fun (spring-data Cassandra release was to late)
-- Think about whe /how remove old microservices
+- Think about when/how remove old microservices
 
