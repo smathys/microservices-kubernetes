@@ -1,9 +1,6 @@
 ## Microservices and Kubernetes
 
-<img src="assets/image/container.png" width="400px">
-
-
-+++
+<img src="assets/image/container.png" width="600px">
 
 Experiences made, working with Microservices and Kubernetes on AWS during one year
 
@@ -99,7 +96,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 ## Working with Kubernetes and Microservices
 
-<img src="assets/image/microservices.jpg" width="400px">  
+<img src="assets/image/microservices.jpg" width="800px">  
 
 
 +++
@@ -133,7 +130,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 ### Working on Microservices
 
 - Small code repos
-- simple Tasks:
+- Simple Tasks:
   - Read Kafka topic
   - Process message
   - Calculate
@@ -172,7 +169,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 - Docker-Compose
 - Postman
 - SSH port-forwarding
-- Bash script/ tools provided by Cassandra & Kafka
+- Bash scripts/tools provided by Cassandra & Kafka
 
 ---
 
@@ -186,7 +183,8 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
   - dead-letter-que
   - measure metrics on Kafka queues
   - replay journeys in different environments
-- Build own Flyway/Liquibase pragmatic  approach for Cassandra
+  - retention time 30 days
+- Build own pragmatic Liquibase approach for Cassandra
 
 ---
 
@@ -198,17 +196,18 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 - Losing overview of services and their version
 - Complex management of requirements for multiple microservices
 - Frequent release cycles -> fix bugs for external interfaces
-- Handling of multi tenancy was introduced after first releases
+- Handling of multi t enancy was introduced after first releases
 
 ---
 
 ## Wrap Up
 
 - Use:
-  - Managed Kubernetes
+  - Managed Kubernetes, upgrade kubernetes cluster was time-consuming
   - API-Gateways
   - Service-Discovery
-- Think about multi tenancy first
+  - Cloud Config Service/Framework
+- Think about applying multi tenancy first
 - Bleeding edge is not always fun (spring-data Cassandra release was to late)
-- Think about when / how remove old microservices
+- Think about whe /how remove old microservices
 
