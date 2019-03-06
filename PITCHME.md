@@ -1,8 +1,9 @@
-# Microservices and Kubernetes
+## Microservices and Kubernetes
 
-![title](assets/image/container.png)
+<img src="assets/image/container.png" width="400px">
+
+
 +++
-
 
 Experiences made, working with Microservices and Kubernetes on AWS during one year
 
@@ -43,9 +44,11 @@ Experiences made, working with Microservices and Kubernetes on AWS during one ye
 
 ## The Project
 
-### www.abilio.ch
+ [www.abilio.ch](https://www.abilio.ch/)  
+ 
+ 
+<img src="assets/image/abilio.png" width="400px">
 
-![Abilio](assets/image/abilio.png)
 
 Note:
 Siemens biete die Platform an um die Abilio App zu betreiben.
@@ -96,7 +99,8 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 ## Working with Kubernetes and Microservices
 
-![Microservices](assets/image/microservices.jpg)
+<img src="assets/image/microservices.jpg" width="400px">  
+
 
 +++
 
@@ -107,6 +111,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 - Prod AWS Frankfurt, no access rights for developers
 - Multi tenancy with namespaces in clusters
 - Access via identity file and ssh
+- Scaling services was done manually
 - Tools
   - ELK
   - Grafana
@@ -116,8 +121,10 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 ### Setup/Organisation of Microservices
 
-- 1 git repo per service
-- Corresponding config files in config-repo
+- 1 git repo per service, versioning per service
+- Corresponding config files in config-repo:
+  - config for using properties
+  - deployment/file Kubernetes
 - Cassandra keyspace per service per client
 - Kafka topics per event-stream and client
 
@@ -126,14 +133,14 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 ### Working on Microservices
 
 - Small code repos
-- Tasks:
-  - Read kafka topic
+- simple Tasks:
+  - Read Kafka topic
   - Process message
   - Calculate
   - Store in db
-  - Write to kafka topic
+  - Write to Kafka topic
   - Rest-controller
-- Serialize / Deserialze json
+- Serialize / Deserialize json
 
 +++
 
@@ -143,24 +150,29 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 - Spring Boot Jars
 - 1 Parent Pom for managing Spring Boot Version
 - Support Libs as abstraction for Cassandra, Kafka, Http
+- Bash working with kubectl:
+  - list all pods
+  - apply config for pod-xy
+  - list config/deployment
+  - kill pod
 
 +++
 
 ### Testing on a Microservices
 
-- Portforwarding for local development, Dev cluster used heavenly by developers
+- Port-forwarding for local development, Dev cluster used heavenly by developers
 - Automated API Tests for each Service with Postman
 - Replay of old journeys from staging or prod
-- Fake model train in office which drive one S-Bahn line all day long
+- Fake model train in office-space which drives a test- S-Bahn line all day long
 
 +++
 
 ### Tools used for Development
 
-- Docker-compose
+- Docker-Compose
 - Postman
-- Ssh portforwarding
-- Bash script/ tools provided by cassandra & kafka
+- SSH port-forwarding
+- Bash script/ tools provided by Cassandra & Kafka
 
 ---
 
@@ -168,11 +180,13 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 - Focus on small functions
 - Independent deployment of releases
-- Docker-image run everywhere, deployment of release means config uses new version of docker-image
+- Docker-image: deployment of release means config uses new version of Docker-Image
 - Zero downtime deployment
 - Usage of Kafka:
   - dead-letter-que
-  - mesarue metrics on kafka-queues
+  - measure metrics on Kafka queues
+  - replay journeys in different environments
+- Build own Flyway/Liquibase pragmatic  approach for Cassandra
 
 ---
 
@@ -194,7 +208,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
   - Managed Kubernetes
   - API-Gateways
   - Service-Discovery
-- Think about multi tenancy
-- Bleeding edge is not always fun (spring-data cassandra release was to late)
+- Think about multi tenancy first
+- Bleeding edge is not always fun (spring-data Cassandra release was to late)
 - Think about when / how remove old microservices
 
