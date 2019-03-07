@@ -83,8 +83,8 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 - Ops team in India
 - Dev Team :
-  - 1 Siemens Ops Team Coordinator
-  - 6 backend developers Noser Engineering
+  - 1 Ops Team Coordinator Siemens
+  - 4 backend developers Noser Engineering
   - 2 frontend developers Noser Engineering
   - 3 Mobile developers Noser Engineering
   - 2 Hardware developers Siemens
@@ -106,13 +106,9 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 - 3 Environments: dev, staging, prod
 - Dev & staging AWS Ireland
 - Prod AWS Frankfurt, no access rights for developers
-- Multi tenancy with namespaces in clusters
+- Multi tenancy with namespaces in cluster
 - Access via identity file and ssh
 - Scaling services was done manually
-- Tools
-  - ELK
-  - Grafana
-  - Cockpit-App
 
 +++
 
@@ -143,24 +139,23 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 ### Development on Microservices
 
-- Java & Kotlin mixed
-- Spring Boot Jars
+- Java & Kotlin mixed, Spring Boot
 - 1 Parent Pom for managing Spring Boot Version
 - Support Libs as abstraction for Cassandra, Kafka, Http
 - Bash working with kubectl:
   - list all pods
   - apply config for pod-xy
-  - list config/deployment
+  - list config/deployment fpr pod-xy
   - kill pod
 
 +++
 
-### Testing on a Microservices
+### Testing on Microservices
 
 - Port-forwarding for local development, Dev cluster used heavily by developers
 - Automated API Tests for each Service with Postman
 - Replay of old journeys from staging or prod
-- Fake model train in office-space which drives a test- S-Bahn line all day long
+- Fake model train in office-space which drives virtually a S-Bahn line all day long
 
 +++
 
@@ -184,6 +179,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
   - measure metrics on Kafka queues
   - replay journeys in different environments
 - Build own pragmatic Liquibase approach for Cassandra
+- Compare a different implementation in v2 & v3
 
 ---
 
@@ -208,5 +204,5 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
   - Cloud Config Service/Framework
 - Think about applying multi tenancy first
 - Bleeding edge is not always fun (spring-data Cassandra release was to late)
-- Think about when/how remove old microservices
+- Think about when/how remove old microservices(App versions live forever)
 
