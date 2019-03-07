@@ -157,7 +157,7 @@ Fahrten von Passagieren werden anhand von Sensor-Daten berechnet und das günsti
 
 ### Testing on a Microservices
 
-- Port-forwarding for local development, Dev cluster used heavenly by developers
+- Port-forwarding for local development, Dev cluster used heavily by developers
 - Automated API Tests for each Service with Postman
 - Replay of old journeys from staging or prod
 - Fake model train in office-space which drives a test- S-Bahn line all day long
